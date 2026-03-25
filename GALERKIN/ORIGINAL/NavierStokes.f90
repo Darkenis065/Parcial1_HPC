@@ -22,9 +22,9 @@ module GlobalData
 
     ! 3. LÍMITES DE ITERACIÓN Y CONVERGENCIA
     !    - Mallas finas requieren MÁS iteraciones en ambos parámetros
-    integer :: max_picard = 25000    ! Máximo de iteraciones globales (Bucle principal de la física)
-    integer :: max_gs     = 15000    ! Máximo de iteraciones del solver interno (Ecuación de Poisson)
-    real(dp) :: tol       = 1.0d-6   ! Criterio de parada (Tolerancia de error)
+    integer :: max_picard = 1000     ! Máximo de iteraciones globales (Bucle principal de la física)
+    integer :: max_gs     = 1500     ! Máximo de iteraciones del solver interno (Ecuación de Poisson)
+    real(dp) :: tol       = 1.0d-4   ! Criterio de parada (Tolerancia de error)
 
     ! ==========================================================================
     ! >>> FIN DEL PANEL DE CONTROL <<<

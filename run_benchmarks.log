@@ -1,0 +1,2 @@
+--- Benchmarking Finite Difference ---
+Original: 4.532, Optimized: 1.922, Parallel(20): 35.187

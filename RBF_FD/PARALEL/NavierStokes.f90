@@ -486,7 +486,7 @@ MODULE solver_ns_mod
 
         ! Estabilizador en regimenes transicionales (Re > 10.0)
         IF (Re > 10.0_DP) THEN; gamma_hyp = 0.01_DP * (0.05_DP**6); ELSE; gamma_hyp = 0.0_DP; END IF
-        max_iter = 10000
+        max_iter = 250
 
         DO iter = 1, max_iter
             !$OMP PARALLEL DO SCHEDULE(STATIC)

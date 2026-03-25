@@ -21,8 +21,7 @@ C=======================================================================
       DIMENSION P(NX,NY), XSI(NX,NY)
       INTEGER I, J, NITER, JJJ, LENGTH, J1, I1, I2
 
-      WRITE (6,*) 'NUMERO DE ITERACIONES'
-      READ (5,*) JJJ
+      JJJ = 10000
 
 C     POSICION DEL OBSTACULO
       LENGTH = NY/4
