@@ -1,0 +1,15 @@
+NavierStokes.f:18:72:
+
+   18 |       IMPLICIT REAL*8 (A-H,O-Z)
+      |                                                                        1
+Error: IMPLICIT statement at (1) cannot follow INTERFACE statement at (2)
+NavierStokes.f:74:72:
+
+   74 |       IMPLICIT REAL*8 (A-H,O-Z)
+      |                                                                        1
+Error: IMPLICIT statement at (1) cannot follow INTERFACE statement at (2)
+NavierStokes.f:155:72:
+
+  155 |       IMPLICIT REAL*8 (A-H,O-Z)
+      |                                                                        1
+Error: IMPLICIT statement at (1) cannot follow INTERFACE statement at (2)
