@@ -1,55 +1,3 @@
---- Benchmarking Finite Difference ---
-Original: 4.532, Optimized: 1.922, Parallel(20): 35.187
---- Benchmarking Galerkin ---
-Galerkin Original finished
-Galerkin Optimized finished
-NavierStokes.f90:236:132:
-
-  236 |         !$omp parallel do default(shared) private(e, tmp, i, j, x1, y1, x2, y2, x3, y3, detJ, Area, b, c, u, v, C_e, K_e, val, inv_2Area, inv_4Area, coeff_diff, n) schedule(guided)
-      |                                                                                                                                    1
-Error: Line truncated at (1) [-Werror=line-truncation]
-NavierStokes.f90:236:132:
-
-  236 |         !$omp parallel do default(shared) private(e, tmp, i, j, x1, y1, x2, y2, x3, y3, detJ, Area, b, c, u, v, C_e, K_e, val, inv_2Area, inv_4Area, coeff_diff, n) schedule(guided)
-      |                                                                                                                                    1
-Error: Syntax error in OpenMP variable list at (1)
-NavierStokes.f90:269:29:
-
-  269 |         !$omp end parallel do
-      |                             1
-Error: Unexpected !$OMP END PARALLEL DO statement at (1)
-NavierStokes.f90:282:132:
-
-  282 |         !$omp parallel do default(shared) private(e, tmp, i, j, x1, y1, x2, y2, x3, y3, detJ, Area, b, c, K_e, f_e, inv_4Area, area_div_12, n) schedule(guided)
-      |                                                                                                                                    1
-Error: Line truncated at (1) [-Werror=line-truncation]
-NavierStokes.f90:282:132:
-
-  282 |         !$omp parallel do default(shared) private(e, tmp, i, j, x1, y1, x2, y2, x3, y3, detJ, Area, b, c, K_e, f_e, inv_4Area, area_div_12, n) schedule(guided)
-      |                                                                                                                                    1
-Error: Syntax error in OpenMP variable list at (1)
-NavierStokes.f90:316:29:
-
-  316 |         !$omp end parallel do
-      |                             1
-Error: Unexpected !$OMP END PARALLEL DO statement at (1)
-NavierStokes.f90:364:9:
-
-  364 |     use SolverOps
-      |         1
-Fatal Error: Cannot open module file ‘solverops.mod’ for reading at (1): No such file or directory
-f951: some warnings being treated as errors
-compilation terminated.
-Failed compilation Galerkin Parallel
-Original: 45.087, Optimized: 43.631, Parallel(20): 0
-Galerkin Parallel Thread 5 finished
-Galerkin Parallel Thread 10 finished
-Galerkin Parallel Thread 15 finished
-Galerkin Parallel Thread 20 finished
-Galerkin Parallel Thread 25 finished
-Galerkin Parallel Thread 30 finished
-Galerkin Parallel Thread 35 finished
-Galerkin Parallel Thread 40 finished
 --- Benchmarking RBF-FD ---
 gfortran: fatal error: cannot execute ‘cc1gm2’: execvp: No such file or directory
 compilation terminated.
@@ -388,10 +336,10 @@ NavierStokes.f90:378:43:
   378 |         gamma_hyp = 0.01_DP * (0.05_DP**6)
       |                                           1
 Error: Unexpected assignment statement in CONTAINS section at (1)
-NavierStokes.f90:379:22:
+NavierStokes.f90:379:24:
 
-  379 |         max_iter = 250
-      |                      1
+  379 |         max_iter = 10000
+      |                        1
 Error: Unexpected assignment statement in CONTAINS section at (1)
 NavierStokes.f90:381:17:
 
@@ -1320,13 +1268,13 @@ NavierStokes.f90:454:40:
 Error: Unexpected data declaration statement in CONTAINS section at (1)
 NavierStokes.f90:456:44:
 
-  456 |         gamma_hyp = 0.01_DP * (0.05_DP**6); max_iter = 250
+  456 |         gamma_hyp = 0.01_DP * (0.05_DP**6); max_iter = 10000
       |                                            1
 Error: Unexpected assignment statement in CONTAINS section at (1)
-NavierStokes.f90:456:58:
+NavierStokes.f90:456:60:
 
-  456 |         gamma_hyp = 0.01_DP * (0.05_DP**6); max_iter = 250
-      |                                                          1
+  456 |         gamma_hyp = 0.01_DP * (0.05_DP**6); max_iter = 10000
+      |                                                            1
 Error: Unexpected assignment statement in CONTAINS section at (1)
 NavierStokes.f90:458:29:
 
@@ -2378,10 +2326,10 @@ NavierStokes.f90:488:97:
   488 |         IF (Re > 10.0_DP) THEN; gamma_hyp = 0.01_DP * (0.05_DP**6); ELSE; gamma_hyp = 0.0_DP; END IF
       |                                                                                                 1
 Error: Expecting END MODULE statement at (1)
-NavierStokes.f90:489:22:
+NavierStokes.f90:489:24:
 
-  489 |         max_iter = 250
-      |                      1
+  489 |         max_iter = 10000
+      |                        1
 Error: Unexpected assignment statement in CONTAINS section at (1)
 NavierStokes.f90:491:29:
 

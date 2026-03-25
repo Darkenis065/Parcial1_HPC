@@ -453,7 +453,7 @@ MODULE solver_ns_mod
         INTEGER :: iter, max_iter, i
         REAL(DP) :: err_omega, gamma_hyp
 
-        gamma_hyp = 0.01_DP * (0.05_DP**6); max_iter = 250
+        gamma_hyp = 0.01_DP * (0.05_DP**6); max_iter = 10000
 
         DO iter = 1, max_iter
             DO i = 1, num_nodes; omg_n(i) = omega(i); END DO

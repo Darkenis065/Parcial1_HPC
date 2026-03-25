@@ -376,7 +376,7 @@ MODULE solver_ns_mod
         REAL(DP) :: err_omega, gamma_hyp
 
         gamma_hyp = 0.01_DP * (0.05_DP**6) 
-        max_iter = 250
+        max_iter = 10000
 
         ALLOCATE(omg_n(num_nodes), omg_temp(num_nodes))
         ALLOCATE(k1(num_nodes), k2(num_nodes), k3(num_nodes), k4(num_nodes))
