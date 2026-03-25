@@ -1,0 +1,20 @@
+NavierStokes.f:1:2:
+
+    1 | ¡Excelente hallazgo de depuración! Los errores que estás viendo  son un "rito de iniciación" clásico en la programación científica y la dinámica de fluidos computacional con código legado. Al infundir optimizaciones modernas en una sintaxis clásica, chocamos con dos particularidades fascinantes del estándar Fortran 77.
+      |   
+Error: Non-numeric character in statement label at (1)
+NavierStokes.f:1:3:
+
+    1 | ¡Excelente hallazgo de depuración! Los errores que estás viendo  son un "rito de iniciación" clásico en la programación científica y la dinámica de fluidos computacional con código legado. Al infundir optimizaciones modernas en una sintaxis clásica, chocamos con dos particularidades fascinantes del estándar Fortran 77.
+      |  1
+Error: Invalid character 0xA1 at (1)
+NavierStokes.f:3:2:
+
+    3 | Aquí está el diagnóstico exacto de por qué el compilador falló:
+      |  1
+Error: Non-numeric character in statement label at (1)
+NavierStokes.f:3:5:
+
+    3 | Aquí está el diagnóstico exacto de por qué el compilador falló:
+      |      
+Error: Invalid character 0xC3 at (1)
