@@ -1,0 +1,2645 @@
+--- Benchmarking Finite Difference ---
+Original: 4.532, Optimized: 1.922, Parallel(20): 35.187
+--- Benchmarking Galerkin ---
+Galerkin Original finished
+Galerkin Optimized finished
+NavierStokes.f90:236:132:
+
+  236 |         !$omp parallel do default(shared) private(e, tmp, i, j, x1, y1, x2, y2, x3, y3, detJ, Area, b, c, u, v, C_e, K_e, val, inv_2Area, inv_4Area, coeff_diff, n) schedule(guided)
+      |                                                                                                                                    1
+Error: Line truncated at (1) [-Werror=line-truncation]
+NavierStokes.f90:236:132:
+
+  236 |         !$omp parallel do default(shared) private(e, tmp, i, j, x1, y1, x2, y2, x3, y3, detJ, Area, b, c, u, v, C_e, K_e, val, inv_2Area, inv_4Area, coeff_diff, n) schedule(guided)
+      |                                                                                                                                    1
+Error: Syntax error in OpenMP variable list at (1)
+NavierStokes.f90:269:29:
+
+  269 |         !$omp end parallel do
+      |                             1
+Error: Unexpected !$OMP END PARALLEL DO statement at (1)
+NavierStokes.f90:282:132:
+
+  282 |         !$omp parallel do default(shared) private(e, tmp, i, j, x1, y1, x2, y2, x3, y3, detJ, Area, b, c, K_e, f_e, inv_4Area, area_div_12, n) schedule(guided)
+      |                                                                                                                                    1
+Error: Line truncated at (1) [-Werror=line-truncation]
+NavierStokes.f90:282:132:
+
+  282 |         !$omp parallel do default(shared) private(e, tmp, i, j, x1, y1, x2, y2, x3, y3, detJ, Area, b, c, K_e, f_e, inv_4Area, area_div_12, n) schedule(guided)
+      |                                                                                                                                    1
+Error: Syntax error in OpenMP variable list at (1)
+NavierStokes.f90:316:29:
+
+  316 |         !$omp end parallel do
+      |                             1
+Error: Unexpected !$OMP END PARALLEL DO statement at (1)
+NavierStokes.f90:364:9:
+
+  364 |     use SolverOps
+      |         1
+Fatal Error: Cannot open module file ‘solverops.mod’ for reading at (1): No such file or directory
+f951: some warnings being treated as errors
+compilation terminated.
+Failed compilation Galerkin Parallel
+Original: 45.087, Optimized: 43.631, Parallel(20): 0
+Galerkin Parallel Thread 5 finished
+Galerkin Parallel Thread 10 finished
+Galerkin Parallel Thread 15 finished
+Galerkin Parallel Thread 20 finished
+Galerkin Parallel Thread 25 finished
+Galerkin Parallel Thread 30 finished
+Galerkin Parallel Thread 35 finished
+Galerkin Parallel Thread 40 finished
+--- Benchmarking RBF-FD ---
+gfortran: fatal error: cannot execute ‘cc1gm2’: execvp: No such file or directory
+compilation terminated.
+NavierStokes.f90:259:132:
+
+  259 |     SUBROUTINE solve_poisson_bicgstab(L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, V0, Ly, coords, psi, omega)
+      |                                                                                                                                    1
+Error: Line truncated at (1) [-Werror=line-truncation]
+NavierStokes.f90:259:132:
+
+  259 |     SUBROUTINE solve_poisson_bicgstab(L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, V0, Ly, coords, psi, omega)
+      |                                                                                                                                    1
+Error: Unexpected junk in formal argument list at (1)
+NavierStokes.f90:260:57:
+
+  260 |         TYPE(csr_matrix), INTENT(IN) :: L_lap, L_dx, L_dy
+      |                                                         1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:261:40:
+
+  261 |         INTEGER, INTENT(IN) :: num_nodes
+      |                                        1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:262:78:
+
+  262 |         INTEGER, DIMENSION(:), INTENT(IN) :: node_type, out_mirror, g_wall_idx
+      |                                                                              1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:263:64:
+
+  263 |         REAL(DP), DIMENSION(:), INTENT(IN) :: g_norm_x, g_norm_y
+      |                                                                1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:264:38:
+
+  264 |         REAL(DP), INTENT(IN) :: V0, Ly
+      |                                      1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:265:54:
+
+  265 |         REAL(DP), DIMENSION(:,:), INTENT(IN) :: coords
+      |                                                      1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:266:59:
+
+  266 |         REAL(DP), DIMENSION(:), INTENT(INOUT) :: psi, omega
+      |                                                           1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:268:78:
+
+  268 |         REAL(DP), ALLOCATABLE :: b(:), r(:), r0_hat(:), p(:), v(:), s(:), t(:)
+      |                                                                              1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:269:60:
+
+  269 |         REAL(DP) :: rho, rho_prev, alpha, omega_c, beta, err
+      |                                                            1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:270:26:
+
+  270 |         INTEGER :: i, iter
+      |                          1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:272:17:
+
+  272 |         ALLOCATE(b(num_nodes), r(num_nodes), r0_hat(num_nodes), p(num_nodes), v(num_nodes), s(num_nodes), t(num_nodes))
+      |                 1
+Error: Allocate-object at (1) is neither a data pointer nor an allocatable variable
+NavierStokes.f90:275:18:
+
+  275 |         b = 0.0_DP
+      |                  1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:276:27:
+
+  276 |         DO i = 1, num_nodes
+      |                           1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:277:36:
+
+  277 |             IF (node_type(i) == 0) b(i) = -omega(i)
+      |                                    1
+Error: Syntax error in IF-clause after (1)
+NavierStokes.f90:278:36:
+
+  278 |             IF (node_type(i) == 1) b(i) = V0 * coords(2,i)
+      |                                    1
+Error: Syntax error in IF-clause after (1)
+NavierStokes.f90:279:36:
+
+  279 |             IF (node_type(i) == 5) b(i) = V0 * Ly
+      |                                    1
+Error: Syntax error in IF-clause after (1)
+NavierStokes.f90:281:11:
+
+  281 |         END DO
+      |           1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:284:113:
+
+  284 |         CALL apply_A(psi, v, L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y)
+      |                                                                                                                 1
+Error: Unexpected CALL statement in CONTAINS section at (1)
+NavierStokes.f90:285:17:
+
+  285 |         r = b - v
+      |                 1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:286:18:
+
+  286 |         r0_hat = r
+      |                  1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:287:27:
+
+  287 |         rho_prev = 1.0_DP; alpha = 1.0_DP; omega_c = 1.0_DP
+      |                           1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:287:43:
+
+  287 |         rho_prev = 1.0_DP; alpha = 1.0_DP; omega_c = 1.0_DP
+      |                                           1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:287:59:
+
+  287 |         rho_prev = 1.0_DP; alpha = 1.0_DP; omega_c = 1.0_DP
+      |                                                           1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:288:20:
+
+  288 |         v = 0.0_DP; p = 0.0_DP
+      |                    1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:288:30:
+
+  288 |         v = 0.0_DP; p = 0.0_DP
+      |                              1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:290:25:
+
+  290 |         DO iter = 1, 2000
+      |                         1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:291:40:
+
+  291 |             rho = DOT_PRODUCT(r0_hat, r)
+      |                                        1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:292:38:
+
+  292 |             IF (ABS(rho) < 1D-14) EXIT
+      |                                      1
+Error: EXIT statement at (1) is not within a construct
+NavierStokes.f90:294:31:
+
+  294 |             IF (iter == 1) THEN
+      |                               1
+Error: Unexpected block IF statement in CONTAINS section at (1)
+NavierStokes.f90:295:21:
+
+  295 |                 p = r
+      |                     1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:296:16:
+
+  296 |             ELSE
+      |                1
+Error: Unexpected ELSE statement in CONTAINS section at (1)
+NavierStokes.f90:297:59:
+
+  297 |                 beta = (rho / rho_prev) * (alpha / omega_c)
+      |                                                           1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:298:48:
+
+  298 |                 p = r + beta * (p - omega_c * v)
+      |                                                1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:299:15:
+
+  299 |             END IF
+      |               1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:301:115:
+
+  301 |             CALL apply_A(p, v, L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y)
+      |                                                                                                                   1
+Error: Unexpected CALL statement in CONTAINS section at (1)
+NavierStokes.f90:302:48:
+
+  302 |             alpha = rho / DOT_PRODUCT(r0_hat, v)
+      |                                                1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:303:29:
+
+  303 |             s = r - alpha * v
+      |                             1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:305:74:
+
+  305 |             err = SQRT(DOT_PRODUCT(s, s)) / SQRT(DOT_PRODUCT(b,b) + 1D-14)
+      |                                                                          1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:306:32:
+
+  306 |             IF (err < 1D-6) THEN
+      |                                1
+Error: Unexpected block IF statement in CONTAINS section at (1)
+NavierStokes.f90:307:39:
+
+  307 |                 psi = psi + alpha * p; EXIT
+      |                                       1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:307:43:
+
+  307 |                 psi = psi + alpha * p; EXIT
+      |                                           1
+Error: EXIT statement at (1) is not within a construct
+NavierStokes.f90:308:15:
+
+  308 |             END IF
+      |               1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:310:115:
+
+  310 |             CALL apply_A(s, t, L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y)
+      |                                                                                                                   1
+Error: Unexpected CALL statement in CONTAINS section at (1)
+NavierStokes.f90:311:59:
+
+  311 |             omega_c = DOT_PRODUCT(t, s) / DOT_PRODUCT(t, t)
+      |                                                           1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:313:47:
+
+  313 |             psi = psi + alpha * p + omega_c * s
+      |                                               1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:314:31:
+
+  314 |             r = s - omega_c * t
+      |                               1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:316:74:
+
+  316 |             err = SQRT(DOT_PRODUCT(r, r)) / SQRT(DOT_PRODUCT(b,b) + 1D-14)
+      |                                                                          1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:317:32:
+
+  317 |             IF (err < 1D-6) EXIT
+      |                                1
+Error: EXIT statement at (1) is not within a construct
+NavierStokes.f90:318:26:
+
+  318 |             rho_prev = rho
+      |                          1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:319:11:
+
+  319 |         END DO
+      |           1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:320:21:
+
+  320 |         DEALLOCATE(b, r, r0_hat, p, v, s, t)
+      |                     1
+Error: Allocate-object at (1) is not a nonprocedure pointer nor an allocatable variable
+NavierStokes.f90:321:7:
+
+  321 |     END SUBROUTINE solve_poisson_bicgstab
+      |       1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:365:132:
+
+  365 |     SUBROUTINE solve_ns(Re, V0, Ly, dt, num_nodes, coords, L_lap, L_dx, L_dy, L_hyp, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, psi, omega)
+      |                                                                                                                                    1
+Error: Line truncated at (1) [-Werror=line-truncation]
+NavierStokes.f90:365:132:
+
+  365 |     SUBROUTINE solve_ns(Re, V0, Ly, dt, num_nodes, coords, L_lap, L_dx, L_dy, L_hyp, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, psi, omega)
+      |                                                                                                                                    1
+Error: Unexpected junk in formal argument list at (1)
+NavierStokes.f90:366:46:
+
+  366 |         REAL(DP), INTENT(IN) :: Re, V0, Ly, dt
+      |                                              1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:367:40:
+
+  367 |         INTEGER, INTENT(IN) :: num_nodes
+      |                                        1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:368:54:
+
+  368 |         REAL(DP), DIMENSION(:,:), INTENT(IN) :: coords
+      |                                                      1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:369:64:
+
+  369 |         TYPE(csr_matrix), INTENT(IN) :: L_lap, L_dx, L_dy, L_hyp
+      |                                                                1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:370:78:
+
+  370 |         INTEGER, DIMENSION(:), INTENT(IN) :: node_type, out_mirror, g_wall_idx
+      |                                                                              1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:371:64:
+
+  371 |         REAL(DP), DIMENSION(:), INTENT(IN) :: g_norm_x, g_norm_y
+      |                                                                1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:372:59:
+
+  372 |         REAL(DP), DIMENSION(:), INTENT(INOUT) :: psi, omega
+      |                                                           1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:374:36:
+
+  374 |         INTEGER :: iter, max_iter, i
+      |                                    1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:375:82:
+
+  375 |         REAL(DP), ALLOCATABLE :: omg_n(:), k1(:), k2(:), k3(:), k4(:), omg_temp(:)
+      |                                                                                  1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:376:40:
+
+  376 |         REAL(DP) :: err_omega, gamma_hyp
+      |                                        1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:378:43:
+
+  378 |         gamma_hyp = 0.01_DP * (0.05_DP**6)
+      |                                           1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:379:22:
+
+  379 |         max_iter = 250
+      |                      1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:381:17:
+
+  381 |         ALLOCATE(omg_n(num_nodes), omg_temp(num_nodes))
+      |                 1
+Error: Allocate-object at (1) is neither a data pointer nor an allocatable variable
+NavierStokes.f90:382:17:
+
+  382 |         ALLOCATE(k1(num_nodes), k2(num_nodes), k3(num_nodes), k4(num_nodes))
+      |                 1
+Error: Allocate-object at (1) is neither a data pointer nor an allocatable variable
+NavierStokes.f90:384:29:
+
+  384 |         DO iter = 1, max_iter
+      |                             1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:385:25:
+
+  385 |             omg_n = omega
+      |                         1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:388:132:
+
+  388 |             CALL solve_poisson_bicgstab(L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, V0, Ly, coords, psi, omega)
+      |                                                                                                                                    1
+Error: Line truncated at (1) [-Werror=line-truncation]
+NavierStokes.f90:388:132:
+
+  388 |             CALL solve_poisson_bicgstab(L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, V0, Ly, coords, psi, omega)
+      |                                                                                                                                    1
+Error: Syntax error in argument list at (1)
+NavierStokes.f90:389:83:
+
+  389 |             CALL update_boundary_vorticity(L_lap, num_nodes, node_type, psi, omega)
+      |                                                                                   1
+Error: Unexpected CALL statement in CONTAINS section at (1)
+NavierStokes.f90:390:107:
+
+  390 |             CALL compute_rhs(Re, gamma_hyp, num_nodes, L_lap, L_dx, L_dy, L_hyp, node_type, psi, omega, k1)
+      |                                                                                                           1
+Error: Unexpected CALL statement in CONTAINS section at (1)
+NavierStokes.f90:393:47:
+
+  393 |             omg_temp = omg_n + 0.5_DP * dt * k1
+      |                                               1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:394:132:
+
+  394 |             CALL solve_poisson_bicgstab(L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, V0, Ly, coords, psi, omg_temp)
+      |                                                                                                                                    1
+Error: Line truncated at (1) [-Werror=line-truncation]
+NavierStokes.f90:394:132:
+
+  394 |             CALL solve_poisson_bicgstab(L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, V0, Ly, coords, psi, omg_temp)
+      |                                                                                                                                    1
+Error: Syntax error in argument list at (1)
+NavierStokes.f90:395:86:
+
+  395 |             CALL update_boundary_vorticity(L_lap, num_nodes, node_type, psi, omg_temp)
+      |                                                                                      1
+Error: Unexpected CALL statement in CONTAINS section at (1)
+NavierStokes.f90:396:110:
+
+  396 |             CALL compute_rhs(Re, gamma_hyp, num_nodes, L_lap, L_dx, L_dy, L_hyp, node_type, psi, omg_temp, k2)
+      |                                                                                                              1
+Error: Unexpected CALL statement in CONTAINS section at (1)
+NavierStokes.f90:399:47:
+
+  399 |             omg_temp = omg_n + 0.5_DP * dt * k2
+      |                                               1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:400:132:
+
+  400 |             CALL solve_poisson_bicgstab(L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, V0, Ly, coords, psi, omg_temp)
+      |                                                                                                                                    1
+Error: Line truncated at (1) [-Werror=line-truncation]
+NavierStokes.f90:400:132:
+
+  400 |             CALL solve_poisson_bicgstab(L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, V0, Ly, coords, psi, omg_temp)
+      |                                                                                                                                    1
+Error: Syntax error in argument list at (1)
+NavierStokes.f90:401:86:
+
+  401 |             CALL update_boundary_vorticity(L_lap, num_nodes, node_type, psi, omg_temp)
+      |                                                                                      1
+Error: Unexpected CALL statement in CONTAINS section at (1)
+NavierStokes.f90:402:110:
+
+  402 |             CALL compute_rhs(Re, gamma_hyp, num_nodes, L_lap, L_dx, L_dy, L_hyp, node_type, psi, omg_temp, k3)
+      |                                                                                                              1
+Error: Unexpected CALL statement in CONTAINS section at (1)
+NavierStokes.f90:405:38:
+
+  405 |             omg_temp = omg_n + dt * k3
+      |                                      1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:406:132:
+
+  406 |             CALL solve_poisson_bicgstab(L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, V0, Ly, coords, psi, omg_temp)
+      |                                                                                                                                    1
+Error: Line truncated at (1) [-Werror=line-truncation]
+NavierStokes.f90:406:132:
+
+  406 |             CALL solve_poisson_bicgstab(L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, V0, Ly, coords, psi, omg_temp)
+      |                                                                                                                                    1
+Error: Syntax error in argument list at (1)
+NavierStokes.f90:407:86:
+
+  407 |             CALL update_boundary_vorticity(L_lap, num_nodes, node_type, psi, omg_temp)
+      |                                                                                      1
+Error: Unexpected CALL statement in CONTAINS section at (1)
+NavierStokes.f90:408:110:
+
+  408 |             CALL compute_rhs(Re, gamma_hyp, num_nodes, L_lap, L_dx, L_dy, L_hyp, node_type, psi, omg_temp, k4)
+      |                                                                                                              1
+Error: Unexpected CALL statement in CONTAINS section at (1)
+NavierStokes.f90:410:31:
+
+  410 |             DO i = 1, num_nodes
+      |                               1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:411:43:
+
+  411 |                 IF (node_type(i) == 0) THEN
+      |                                           1
+Error: Unexpected block IF statement in CONTAINS section at (1)
+NavierStokes.f90:412:103:
+
+  412 |                     omega(i) = omg_n(i) + (dt / 6.0_DP) * (k1(i) + 2.0_DP*k2(i) + 2.0_DP*k3(i) + k4(i))
+      |                                                                                                       1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:413:72:
+
+  413 |                 ELSE IF (node_type(i) == 2 .AND. out_mirror(i) > 0) THEN
+      |                                                                        1
+Error: Unexpected ELSE IF statement in CONTAINS section at (1)
+NavierStokes.f90:414:51:
+
+  414 |                     omega(i) = omega(out_mirror(i))
+      |                                                   1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:415:19:
+
+  415 |                 END IF
+      |                   1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:416:15:
+
+  416 |             END DO
+      |               1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:418:50:
+
+  418 |             err_omega = MAXVAL(ABS(omega - omg_n))
+      |                                                  1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:419:40:
+
+  419 |             IF (MOD(iter, 10) == 0) THEN
+      |                                        1
+Error: Unexpected block IF statement in CONTAINS section at (1)
+NavierStokes.f90:420:84:
+
+  420 |                 PRINT '(A,I6, A,ES10.3)', 'RK4 Step: ', iter, ' Err_Om: ', err_omega
+      |                                                                                    1
+Error: Unexpected WRITE statement in CONTAINS section at (1)
+NavierStokes.f90:421:105:
+
+  421 |                 IF (err_omega > 1.0D5 .OR. err_omega /= err_omega) STOP 'DIVERGENCIA ESPECTRAL DETECTADA'
+      |                                                                                                         1
+Error: Unexpected simple IF statement in CONTAINS section at (1)
+NavierStokes.f90:422:15:
+
+  422 |             END IF
+      |               1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:423:38:
+
+  423 |             IF (err_omega < 1D-7) EXIT
+      |                                      1
+Error: EXIT statement at (1) is not within a construct
+NavierStokes.f90:424:11:
+
+  424 |         END DO
+      |           1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:425:7:
+
+  425 |     END SUBROUTINE solve_ns
+      |       1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:436:9:
+
+  436 |     USE solver_ns_mod
+      |         1
+Fatal Error: Cannot open module file ‘solver_ns_mod.mod’ for reading at (1): No such file or directory
+f951: some warnings being treated as errors
+compilation terminated.
+Failed compilation RBF_FD Original
+gfortran: fatal error: cannot execute ‘cc1gm2’: execvp: No such file or directory
+compilation terminated.
+NavierStokes.f90:268:132:
+
+  268 |     SUBROUTINE apply_A_fused(x_in, y_out, lap_x, dx_x, dy_x, L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y)
+      |                                                                                                                                    1
+Error: Line truncated at (1) [-Werror=line-truncation]
+NavierStokes.f90:268:132:
+
+  268 |     SUBROUTINE apply_A_fused(x_in, y_out, lap_x, dx_x, dy_x, L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y)
+      |                                                                                                                                    1
+Error: Unexpected junk in formal argument list at (1)
+NavierStokes.f90:269:50:
+
+  269 |         REAL(DP), DIMENSION(:), INTENT(IN) :: x_in
+      |                                                  1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:270:71:
+
+  270 |         REAL(DP), DIMENSION(:), INTENT(OUT) :: y_out, lap_x, dx_x, dy_x
+      |                                                                       1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:271:57:
+
+  271 |         TYPE(csr_matrix), INTENT(IN) :: L_lap, L_dx, L_dy
+      |                                                         1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:272:40:
+
+  272 |         INTEGER, INTENT(IN) :: num_nodes
+      |                                        1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:273:78:
+
+  273 |         INTEGER, DIMENSION(:), INTENT(IN) :: node_type, out_mirror, g_wall_idx
+      |                                                                              1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:274:64:
+
+  274 |         REAL(DP), DIMENSION(:), INTENT(IN) :: g_norm_x, g_norm_y
+      |                                                                1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:275:33:
+
+  275 |         INTEGER :: i, j, c, w_idx
+      |                                 1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:276:44:
+
+  276 |         REAL(DP) :: x_val, s_lap, s_dx, s_dy
+      |                                            1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:278:27:
+
+  278 |         DO i = 1, num_nodes
+      |                           1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:279:28:
+
+  279 |             s_lap = 0.0_DP; s_dx = 0.0_DP; s_dy = 0.0_DP
+      |                            1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:279:43:
+
+  279 |             s_lap = 0.0_DP; s_dx = 0.0_DP; s_dy = 0.0_DP
+      |                                           1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:279:56:
+
+  279 |             s_lap = 0.0_DP; s_dx = 0.0_DP; s_dy = 0.0_DP
+      |                                                        1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:280:26:
+
+  280 |             DO j = L_lap%row_ptr(i), L_lap%row_ptr(i+1)-1
+      |                          1
+Error: Symbol ‘l_lap’ at (1) has no IMPLICIT type
+NavierStokes.f90:281:27:
+
+  281 |                 c = L_lap%col_ind(j); x_val = x_in(c)
+      |                           1
+Error: Symbol ‘l_lap’ at (1) has no IMPLICIT type
+NavierStokes.f90:281:53:
+
+  281 |                 c = L_lap%col_ind(j); x_val = x_in(c)
+      |                                                     1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:282:39:
+
+  282 |                 s_lap = s_lap + L_lap%val(j) * x_val
+      |                                       1
+Error: Symbol ‘l_lap’ at (1) has no IMPLICIT type
+NavierStokes.f90:283:38:
+
+  283 |                 s_dx  = s_dx  + L_dx%val(j)  * x_val
+      |                                      1
+Error: Symbol ‘l_dx’ at (1) has no IMPLICIT type
+NavierStokes.f90:284:38:
+
+  284 |                 s_dy  = s_dy  + L_dy%val(j)  * x_val
+      |                                      1
+Error: Symbol ‘l_dy’ at (1) has no IMPLICIT type
+NavierStokes.f90:285:15:
+
+  285 |             END DO
+      |               1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:286:30:
+
+  286 |             lap_x(i) = s_lap; dx_x(i) = s_dx; dy_x(i) = s_dy
+      |                              1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:286:46:
+
+  286 |             lap_x(i) = s_lap; dx_x(i) = s_dx; dy_x(i) = s_dy
+      |                                              1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:286:60:
+
+  286 |             lap_x(i) = s_lap; dx_x(i) = s_dx; dy_x(i) = s_dy
+      |                                                            1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:287:11:
+
+  287 |         END DO
+      |           1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:289:27:
+
+  289 |         DO i = 1, num_nodes
+      |                           1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:290:40:
+
+  290 |             IF (node_type(i) == 0) THEN
+      |                                        1
+Error: Unexpected block IF statement in CONTAINS section at (1)
+NavierStokes.f90:291:35:
+
+  291 |                 y_out(i) = lap_x(i)
+      |                                   1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:292:90:
+
+  292 |             ELSE IF (node_type(i) == 1 .OR. node_type(i) == 3 .OR. node_type(i) == 5) THEN
+      |                                                                                          1
+Error: Unexpected ELSE IF statement in CONTAINS section at (1)
+NavierStokes.f90:293:34:
+
+  293 |                 y_out(i) = x_in(i)
+      |                                  1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:294:68:
+
+  294 |             ELSE IF (node_type(i) == 2 .AND. out_mirror(i) > 0) THEN
+      |                                                                    1
+Error: Unexpected ELSE IF statement in CONTAINS section at (1)
+NavierStokes.f90:295:56:
+
+  295 |                 y_out(i) = x_in(i) - x_in(out_mirror(i))
+      |                                                        1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:296:44:
+
+  296 |             ELSE IF (node_type(i) == 4) THEN
+      |                                            1
+Error: Unexpected ELSE IF statement in CONTAINS section at (1)
+NavierStokes.f90:297:37:
+
+  297 |                 w_idx = g_wall_idx(i)
+      |                                     1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:298:80:
+
+  298 |                 y_out(i) = g_norm_x(i) * dx_x(w_idx) + g_norm_y(i) * dy_x(w_idx)
+      |                                                                                1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:299:16:
+
+  299 |             ELSE
+      |                1
+Error: Unexpected ELSE statement in CONTAINS section at (1)
+NavierStokes.f90:300:34:
+
+  300 |                 y_out(i) = x_in(i)
+      |                                  1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:301:15:
+
+  301 |             END IF
+      |               1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:302:11:
+
+  302 |         END DO
+      |           1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:303:7:
+
+  303 |     END SUBROUTINE apply_A_fused
+      |       1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:305:132:
+
+  305 |     SUBROUTINE solve_poisson_bicgstab(L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, V0, Ly, coords, psi, omega, b, r, r0_hat, p, v, s, t, lap_x, dx_x, dy_x)
+      |                                                                                                                                    1
+Error: Line truncated at (1) [-Werror=line-truncation]
+NavierStokes.f90:305:132:
+
+  305 |     SUBROUTINE solve_poisson_bicgstab(L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, V0, Ly, coords, psi, omega, b, r, r0_hat, p, v, s, t, lap_x, dx_x, dy_x)
+      |                                                                                                                                    1
+Error: Unexpected junk in formal argument list at (1)
+NavierStokes.f90:306:57:
+
+  306 |         TYPE(csr_matrix), INTENT(IN) :: L_lap, L_dx, L_dy
+      |                                                         1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:307:40:
+
+  307 |         INTEGER, INTENT(IN) :: num_nodes
+      |                                        1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:308:78:
+
+  308 |         INTEGER, DIMENSION(:), INTENT(IN) :: node_type, out_mirror, g_wall_idx
+      |                                                                              1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:309:71:
+
+  309 |         REAL(DP), DIMENSION(:), INTENT(IN) :: g_norm_x, g_norm_y, omega
+      |                                                                       1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:310:38:
+
+  310 |         REAL(DP), INTENT(IN) :: V0, Ly
+      |                                      1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:311:54:
+
+  311 |         REAL(DP), DIMENSION(:,:), INTENT(IN) :: coords
+      |                                                      1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:312:97:
+
+  312 |         REAL(DP), DIMENSION(:), INTENT(INOUT) :: psi, b, r, r0_hat, p, v, s, t, lap_x, dx_x, dy_x
+      |                                                                                                 1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:313:125:
+
+  313 |         REAL(DP) :: rho, rho_prev, alpha, omega_c, beta, err, dot_r0_r, dot_r0_v, dot_s_s, dot_t_s, dot_t_t, dot_r_r, dot_b_b
+      |                                                                                                                             1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:314:26:
+
+  314 |         INTEGER :: i, iter
+      |                          1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:316:27:
+
+  316 |         DO i = 1, num_nodes
+      |                           1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:317:41:
+
+  317 |             IF (node_type(i) == 0) THEN; b(i) = -omega(i)
+      |                                         1
+Error: Unexpected block IF statement in CONTAINS section at (1)
+NavierStokes.f90:317:57:
+
+  317 |             IF (node_type(i) == 0) THEN; b(i) = -omega(i)
+      |                                                         1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:318:46:
+
+  318 |             ELSE IF (node_type(i) == 1) THEN; b(i) = V0 * coords(2,i)
+      |                                              1
+Error: Unexpected ELSE IF statement in CONTAINS section at (1)
+NavierStokes.f90:318:69:
+
+  318 |             ELSE IF (node_type(i) == 1) THEN; b(i) = V0 * coords(2,i)
+      |                                                                     1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:319:46:
+
+  319 |             ELSE IF (node_type(i) == 5) THEN; b(i) = V0 * Ly
+      |                                              1
+Error: Unexpected ELSE IF statement in CONTAINS section at (1)
+NavierStokes.f90:319:60:
+
+  319 |             ELSE IF (node_type(i) == 5) THEN; b(i) = V0 * Ly
+      |                                                            1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:320:18:
+
+  320 |             ELSE; b(i) = 0.0_DP; END IF
+      |                  1
+Error: Unexpected ELSE statement in CONTAINS section at (1)
+NavierStokes.f90:320:33:
+
+  320 |             ELSE; b(i) = 0.0_DP; END IF
+      |                                 1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:320:36:
+
+  320 |             ELSE; b(i) = 0.0_DP; END IF
+      |                                    1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:321:11:
+
+  321 |         END DO
+      |           1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:323:132:
+
+  323 |         CALL apply_A_fused(psi, v, lap_x, dx_x, dy_x, L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y)
+      |                                                                                                                                    1
+Error: Line truncated at (1) [-Werror=line-truncation]
+NavierStokes.f90:323:132:
+
+  323 |         CALL apply_A_fused(psi, v, lap_x, dx_x, dy_x, L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y)
+      |                                                                                                                                    1
+Error: Syntax error in argument list at (1)
+NavierStokes.f90:325:24:
+
+  325 |         dot_b_b = 0.0_DP
+      |                        1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:326:27:
+
+  326 |         DO i = 1, num_nodes
+      |                           1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:327:32:
+
+  327 |             r(i) = b(i) - v(i); r0_hat(i) = r(i)
+      |                                1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:327:48:
+
+  327 |             r(i) = b(i) - v(i); r0_hat(i) = r(i)
+      |                                                1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:328:27:
+
+  328 |             v(i) = 0.0_DP; p(i) = 0.0_DP
+      |                           1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:328:40:
+
+  328 |             v(i) = 0.0_DP; p(i) = 0.0_DP
+      |                                        1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:329:41:
+
+  329 |             dot_b_b = dot_b_b + b(i)*b(i)
+      |                                         1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:330:11:
+
+  330 |         END DO
+      |           1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:331:27:
+
+  331 |         rho_prev = 1.0_DP; alpha = 1.0_DP; omega_c = 1.0_DP
+      |                           1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:331:43:
+
+  331 |         rho_prev = 1.0_DP; alpha = 1.0_DP; omega_c = 1.0_DP
+      |                                           1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:331:59:
+
+  331 |         rho_prev = 1.0_DP; alpha = 1.0_DP; omega_c = 1.0_DP
+      |                                                           1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:333:25:
+
+  333 |         DO iter = 1, 2000
+      |                         1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:334:29:
+
+  334 |             dot_r0_r = 0.0_DP
+      |                             1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:335:33:
+
+  335 |             DO i = 1, num_nodes; dot_r0_r = dot_r0_r + r0_hat(i) * r(i); END DO
+      |                                 1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:335:73:
+
+  335 |             DO i = 1, num_nodes; dot_r0_r = dot_r0_r + r0_hat(i) * r(i); END DO
+      |                                                                         1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:335:76:
+
+  335 |             DO i = 1, num_nodes; dot_r0_r = dot_r0_r + r0_hat(i) * r(i); END DO
+      |                                                                            1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:336:26:
+
+  336 |             rho = dot_r0_r
+      |                          1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:337:38:
+
+  337 |             IF (ABS(rho) < 1D-14) EXIT
+      |                                      1
+Error: EXIT statement at (1) is not within a construct
+NavierStokes.f90:339:31:
+
+  339 |             IF (iter == 1) THEN
+      |                               1
+Error: Unexpected block IF statement in CONTAINS section at (1)
+NavierStokes.f90:340:37:
+
+  340 |                 DO i = 1, num_nodes; p(i) = r(i); END DO
+      |                                     1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:340:50:
+
+  340 |                 DO i = 1, num_nodes; p(i) = r(i); END DO
+      |                                                  1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:340:53:
+
+  340 |                 DO i = 1, num_nodes; p(i) = r(i); END DO
+      |                                                     1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:341:16:
+
+  341 |             ELSE
+      |                1
+Error: Unexpected ELSE statement in CONTAINS section at (1)
+NavierStokes.f90:342:59:
+
+  342 |                 beta = (rho / rho_prev) * (alpha / omega_c)
+      |                                                           1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:343:35:
+
+  343 |                 DO i = 1, num_nodes
+      |                                   1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:344:64:
+
+  344 |                     p(i) = r(i) + beta * (p(i) - omega_c * v(i))
+      |                                                                1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:345:19:
+
+  345 |                 END DO
+      |                   1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:346:15:
+
+  346 |             END IF
+      |               1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:348:132:
+
+  348 |             CALL apply_A_fused(p, v, lap_x, dx_x, dy_x, L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y)
+      |                                                                                                                                    1
+Error: Line truncated at (1) [-Werror=line-truncation]
+NavierStokes.f90:348:132:
+
+  348 |             CALL apply_A_fused(p, v, lap_x, dx_x, dy_x, L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y)
+      |                                                                                                                                    1
+Error: Syntax error in argument list at (1)
+NavierStokes.f90:350:29:
+
+  350 |             dot_r0_v = 0.0_DP
+      |                             1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:351:33:
+
+  351 |             DO i = 1, num_nodes; dot_r0_v = dot_r0_v + r0_hat(i) * v(i); END DO
+      |                                 1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:351:73:
+
+  351 |             DO i = 1, num_nodes; dot_r0_v = dot_r0_v + r0_hat(i) * v(i); END DO
+      |                                                                         1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:351:76:
+
+  351 |             DO i = 1, num_nodes; dot_r0_v = dot_r0_v + r0_hat(i) * v(i); END DO
+      |                                                                            1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:352:93:
+
+  352 |             IF (ABS(dot_r0_v) < 1D-14) dot_r0_v = SIGN(1.0D-14, dot_r0_v) ! Blindaje singular
+      |                                                                                             1
+Error: Unexpected simple IF statement in CONTAINS section at (1)
+NavierStokes.f90:353:34:
+
+  353 |             alpha = rho / dot_r0_v
+      |                                  1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:355:28:
+
+  355 |             dot_s_s = 0.0_DP
+      |                            1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:356:31:
+
+  356 |             DO i = 1, num_nodes
+      |                               1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:357:42:
+
+  357 |                 s(i) = r(i) - alpha * v(i)
+      |                                          1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:358:45:
+
+  358 |                 dot_s_s = dot_s_s + s(i)*s(i)
+      |                                             1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:359:15:
+
+  359 |             END DO
+      |               1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:361:57:
+
+  361 |             err = SQRT(dot_s_s) / (SQRT(dot_b_b) + 1D-14)
+      |                                                         1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:362:32:
+
+  362 |             IF (err < 1D-6) THEN
+      |                                1
+Error: Unexpected block IF statement in CONTAINS section at (1)
+NavierStokes.f90:363:37:
+
+  363 |                 DO i = 1, num_nodes; psi(i) = psi(i) + alpha * p(i); END DO
+      |                                     1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:363:69:
+
+  363 |                 DO i = 1, num_nodes; psi(i) = psi(i) + alpha * p(i); END DO
+      |                                                                     1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:363:72:
+
+  363 |                 DO i = 1, num_nodes; psi(i) = psi(i) + alpha * p(i); END DO
+      |                                                                        1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:364:20:
+
+  364 |                 EXIT
+      |                    1
+Error: EXIT statement at (1) is not within a construct
+NavierStokes.f90:365:15:
+
+  365 |             END IF
+      |               1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:367:132:
+
+  367 |             CALL apply_A_fused(s, t, lap_x, dx_x, dy_x, L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y)
+      |                                                                                                                                    1
+Error: Line truncated at (1) [-Werror=line-truncation]
+NavierStokes.f90:367:132:
+
+  367 |             CALL apply_A_fused(s, t, lap_x, dx_x, dy_x, L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y)
+      |                                                                                                                                    1
+Error: Syntax error in argument list at (1)
+NavierStokes.f90:369:30:
+
+  369 |             dot_t_s = 0.0_DP; dot_t_t = 0.0_DP
+      |                              1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:369:46:
+
+  369 |             dot_t_s = 0.0_DP; dot_t_t = 0.0_DP
+      |                                              1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:370:31:
+
+  370 |             DO i = 1, num_nodes
+      |                               1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:371:47:
+
+  371 |                 dot_t_s = dot_t_s + t(i)*s(i); dot_t_t = dot_t_t + t(i)*t(i)
+      |                                               1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:371:76:
+
+  371 |                 dot_t_s = dot_t_s + t(i)*s(i); dot_t_t = dot_t_t + t(i)*t(i)
+      |                                                                            1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:372:15:
+
+  372 |             END DO
+      |               1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:373:90:
+
+  373 |             IF (ABS(dot_t_t) < 1D-14) dot_t_t = SIGN(1.0D-14, dot_t_t) ! Blindaje singular
+      |                                                                                          1
+Error: Unexpected simple IF statement in CONTAINS section at (1)
+NavierStokes.f90:374:39:
+
+  374 |             omega_c = dot_t_s / dot_t_t
+      |                                       1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:376:28:
+
+  376 |             dot_r_r = 0.0_DP
+      |                            1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:377:31:
+
+  377 |             DO i = 1, num_nodes
+      |                               1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:378:63:
+
+  378 |                 psi(i) = psi(i) + alpha * p(i) + omega_c * s(i)
+      |                                                               1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:379:44:
+
+  379 |                 r(i) = s(i) - omega_c * t(i)
+      |                                            1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:380:45:
+
+  380 |                 dot_r_r = dot_r_r + r(i)*r(i)
+      |                                             1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:381:15:
+
+  381 |             END DO
+      |               1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:383:57:
+
+  383 |             err = SQRT(dot_r_r) / (SQRT(dot_b_b) + 1D-14)
+      |                                                         1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:384:32:
+
+  384 |             IF (err < 1D-6) EXIT
+      |                                1
+Error: EXIT statement at (1) is not within a construct
+NavierStokes.f90:385:26:
+
+  385 |             rho_prev = rho
+      |                          1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:386:11:
+
+  386 |         END DO
+      |           1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:387:7:
+
+  387 |     END SUBROUTINE solve_poisson_bicgstab
+      |       1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:443:132:
+
+  443 |     SUBROUTINE solve_ns(Re, V0, Ly, dt, num_nodes, coords, L_lap, L_dx, L_dy, L_hyp, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, psi, omega, &
+      |                                                                                                                                    1
+Error: Line truncated at (1) [-Werror=line-truncation]
+NavierStokes.f90:443:132:
+
+  443 |     SUBROUTINE solve_ns(Re, V0, Ly, dt, num_nodes, coords, L_lap, L_dx, L_dy, L_hyp, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, psi, omega, &
+      |                                                                                                                                    1
+Error: Unexpected junk in formal argument list at (1)
+NavierStokes.f90:445:46:
+
+  445 |         REAL(DP), INTENT(IN) :: Re, V0, Ly, dt
+      |                                              1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:446:40:
+
+  446 |         INTEGER, INTENT(IN) :: num_nodes
+      |                                        1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:447:54:
+
+  447 |         REAL(DP), DIMENSION(:,:), INTENT(IN) :: coords
+      |                                                      1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:448:64:
+
+  448 |         TYPE(csr_matrix), INTENT(IN) :: L_lap, L_dx, L_dy, L_hyp
+      |                                                                1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:449:78:
+
+  449 |         INTEGER, DIMENSION(:), INTENT(IN) :: node_type, out_mirror, g_wall_idx
+      |                                                                              1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:450:64:
+
+  450 |         REAL(DP), DIMENSION(:), INTENT(IN) :: g_norm_x, g_norm_y
+      |                                                                1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:451:132:
+
+  451 |         REAL(DP), DIMENSION(:), INTENT(INOUT) :: psi, omega, omg_n, k1, k2, k3, k4, omg_temp, b, r, r0_hat, p, v, s, t, lap_x, dx_x, dy_x
+      |                                                                                                                                    1
+Error: Line truncated at (1) [-Werror=line-truncation]
+NavierStokes.f90:451:132:
+
+  451 |         REAL(DP), DIMENSION(:), INTENT(INOUT) :: psi, omega, omg_n, k1, k2, k3, k4, omg_temp, b, r, r0_hat, p, v, s, t, lap_x, dx_x, dy_x
+      |                                                                                                                                    1
+Error: Invalid character in name at (1)
+NavierStokes.f90:453:36:
+
+  453 |         INTEGER :: iter, max_iter, i
+      |                                    1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:454:40:
+
+  454 |         REAL(DP) :: err_omega, gamma_hyp
+      |                                        1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:456:44:
+
+  456 |         gamma_hyp = 0.01_DP * (0.05_DP**6); max_iter = 250
+      |                                            1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:456:58:
+
+  456 |         gamma_hyp = 0.01_DP * (0.05_DP**6); max_iter = 250
+      |                                                          1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:458:29:
+
+  458 |         DO iter = 1, max_iter
+      |                             1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:459:33:
+
+  459 |             DO i = 1, num_nodes; omg_n(i) = omega(i); END DO
+      |                                 1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:459:54:
+
+  459 |             DO i = 1, num_nodes; omg_n(i) = omega(i); END DO
+      |                                                      1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:459:57:
+
+  459 |             DO i = 1, num_nodes; omg_n(i) = omega(i); END DO
+      |                                                         1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:462:132:
+
+  462 |             CALL solve_poisson_bicgstab(L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, V0, Ly, coords, psi, omega, b, r, r0_hat, p, v, s, t, lap_x, dx_x, dy_x)
+      |                                                                                                                                    1
+Error: Line truncated at (1) [-Werror=line-truncation]
+NavierStokes.f90:462:132:
+
+  462 |             CALL solve_poisson_bicgstab(L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, V0, Ly, coords, psi, omega, b, r, r0_hat, p, v, s, t, lap_x, dx_x, dy_x)
+      |                                                                                                                                    1
+Error: Syntax error in argument list at (1)
+NavierStokes.f90:463:95:
+
+  463 |             CALL update_boundary_vorticity(L_lap, num_nodes, node_type, g_wall_idx, psi, omega)
+      |                                                                                               1
+Error: Unexpected CALL statement in CONTAINS section at (1)
+NavierStokes.f90:464:113:
+
+  464 |             CALL compute_rhs_fused(Re, gamma_hyp, num_nodes, L_lap, L_dx, L_dy, L_hyp, node_type, psi, omega, k1)
+      |                                                                                                                 1
+Error: Unexpected CALL statement in CONTAINS section at (1)
+NavierStokes.f90:467:33:
+
+  467 |             DO i = 1, num_nodes; omg_temp(i) = omg_n(i) + 0.5_DP * dt * k1(i); END DO
+      |                                 1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:467:79:
+
+  467 |             DO i = 1, num_nodes; omg_temp(i) = omg_n(i) + 0.5_DP * dt * k1(i); END DO
+      |                                                                               1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:467:82:
+
+  467 |             DO i = 1, num_nodes; omg_temp(i) = omg_n(i) + 0.5_DP * dt * k1(i); END DO
+      |                                                                                  1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:468:132:
+
+  468 |             CALL solve_poisson_bicgstab(L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, V0, Ly, coords, psi, omg_temp, b, r, r0_hat, p, v, s, t, lap_x, dx_x, dy_x)
+      |                                                                                                                                    1
+Error: Line truncated at (1) [-Werror=line-truncation]
+NavierStokes.f90:468:132:
+
+  468 |             CALL solve_poisson_bicgstab(L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, V0, Ly, coords, psi, omg_temp, b, r, r0_hat, p, v, s, t, lap_x, dx_x, dy_x)
+      |                                                                                                                                    1
+Error: Syntax error in argument list at (1)
+NavierStokes.f90:469:98:
+
+  469 |             CALL update_boundary_vorticity(L_lap, num_nodes, node_type, g_wall_idx, psi, omg_temp)
+      |                                                                                                  1
+Error: Unexpected CALL statement in CONTAINS section at (1)
+NavierStokes.f90:470:116:
+
+  470 |             CALL compute_rhs_fused(Re, gamma_hyp, num_nodes, L_lap, L_dx, L_dy, L_hyp, node_type, psi, omg_temp, k2)
+      |                                                                                                                    1
+Error: Unexpected CALL statement in CONTAINS section at (1)
+NavierStokes.f90:473:33:
+
+  473 |             DO i = 1, num_nodes; omg_temp(i) = omg_n(i) + 0.5_DP * dt * k2(i); END DO
+      |                                 1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:473:79:
+
+  473 |             DO i = 1, num_nodes; omg_temp(i) = omg_n(i) + 0.5_DP * dt * k2(i); END DO
+      |                                                                               1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:473:82:
+
+  473 |             DO i = 1, num_nodes; omg_temp(i) = omg_n(i) + 0.5_DP * dt * k2(i); END DO
+      |                                                                                  1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:474:132:
+
+  474 |             CALL solve_poisson_bicgstab(L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, V0, Ly, coords, psi, omg_temp, b, r, r0_hat, p, v, s, t, lap_x, dx_x, dy_x)
+      |                                                                                                                                    1
+Error: Line truncated at (1) [-Werror=line-truncation]
+NavierStokes.f90:474:132:
+
+  474 |             CALL solve_poisson_bicgstab(L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, V0, Ly, coords, psi, omg_temp, b, r, r0_hat, p, v, s, t, lap_x, dx_x, dy_x)
+      |                                                                                                                                    1
+Error: Syntax error in argument list at (1)
+NavierStokes.f90:475:98:
+
+  475 |             CALL update_boundary_vorticity(L_lap, num_nodes, node_type, g_wall_idx, psi, omg_temp)
+      |                                                                                                  1
+Error: Unexpected CALL statement in CONTAINS section at (1)
+NavierStokes.f90:476:116:
+
+  476 |             CALL compute_rhs_fused(Re, gamma_hyp, num_nodes, L_lap, L_dx, L_dy, L_hyp, node_type, psi, omg_temp, k3)
+      |                                                                                                                    1
+Error: Unexpected CALL statement in CONTAINS section at (1)
+NavierStokes.f90:479:33:
+
+  479 |             DO i = 1, num_nodes; omg_temp(i) = omg_n(i) + dt * k3(i); END DO
+      |                                 1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:479:70:
+
+  479 |             DO i = 1, num_nodes; omg_temp(i) = omg_n(i) + dt * k3(i); END DO
+      |                                                                      1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:479:73:
+
+  479 |             DO i = 1, num_nodes; omg_temp(i) = omg_n(i) + dt * k3(i); END DO
+      |                                                                         1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:480:132:
+
+  480 |             CALL solve_poisson_bicgstab(L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, V0, Ly, coords, psi, omg_temp, b, r, r0_hat, p, v, s, t, lap_x, dx_x, dy_x)
+      |                                                                                                                                    1
+Error: Line truncated at (1) [-Werror=line-truncation]
+NavierStokes.f90:480:132:
+
+  480 |             CALL solve_poisson_bicgstab(L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, V0, Ly, coords, psi, omg_temp, b, r, r0_hat, p, v, s, t, lap_x, dx_x, dy_x)
+      |                                                                                                                                    1
+Error: Syntax error in argument list at (1)
+NavierStokes.f90:481:98:
+
+  481 |             CALL update_boundary_vorticity(L_lap, num_nodes, node_type, g_wall_idx, psi, omg_temp)
+      |                                                                                                  1
+Error: Unexpected CALL statement in CONTAINS section at (1)
+NavierStokes.f90:482:116:
+
+  482 |             CALL compute_rhs_fused(Re, gamma_hyp, num_nodes, L_lap, L_dx, L_dy, L_hyp, node_type, psi, omg_temp, k4)
+      |                                                                                                                    1
+Error: Unexpected CALL statement in CONTAINS section at (1)
+NavierStokes.f90:484:30:
+
+  484 |             err_omega = 0.0_DP
+      |                              1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:485:31:
+
+  485 |             DO i = 1, num_nodes
+      |                               1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:486:43:
+
+  486 |                 IF (node_type(i) == 0) THEN
+      |                                           1
+Error: Unexpected block IF statement in CONTAINS section at (1)
+NavierStokes.f90:487:103:
+
+  487 |                     omega(i) = omg_n(i) + (dt / 6.0_DP) * (k1(i) + 2.0_DP*k2(i) + 2.0_DP*k3(i) + k4(i))
+      |                                                                                                       1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:488:72:
+
+  488 |                 ELSE IF (node_type(i) == 2 .AND. out_mirror(i) > 0) THEN
+      |                                                                        1
+Error: Unexpected ELSE IF statement in CONTAINS section at (1)
+NavierStokes.f90:489:51:
+
+  489 |                     omega(i) = omega(out_mirror(i))
+      |                                                   1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:490:19:
+
+  490 |                 END IF
+      |                   1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:491:94:
+
+  491 |                 IF (ABS(omega(i) - omg_n(i)) > err_omega) err_omega = ABS(omega(i) - omg_n(i))
+      |                                                                                              1
+Error: Unexpected simple IF statement in CONTAINS section at (1)
+NavierStokes.f90:492:15:
+
+  492 |             END DO
+      |               1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:494:40:
+
+  494 |             IF (MOD(iter, 50) == 0) THEN
+      |                                        1
+Error: Unexpected block IF statement in CONTAINS section at (1)
+NavierStokes.f90:495:84:
+
+  495 |                 PRINT '(A,I6, A,ES10.3)', 'RK4 Step: ', iter, ' Err_Om: ', err_omega
+      |                                                                                    1
+Error: Unexpected WRITE statement in CONTAINS section at (1)
+NavierStokes.f90:496:105:
+
+  496 |                 IF (err_omega > 1.0D5 .OR. err_omega /= err_omega) STOP 'DIVERGENCIA ESPECTRAL DETECTADA'
+      |                                                                                                         1
+Error: Unexpected simple IF statement in CONTAINS section at (1)
+NavierStokes.f90:497:15:
+
+  497 |             END IF
+      |               1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:498:38:
+
+  498 |             IF (err_omega < 1D-7) EXIT
+      |                                      1
+Error: EXIT statement at (1) is not within a construct
+NavierStokes.f90:499:11:
+
+  499 |         END DO
+      |           1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:500:7:
+
+  500 |     END SUBROUTINE solve_ns
+      |       1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:511:9:
+
+  511 |     USE solver_ns_mod
+      |         1
+Fatal Error: Cannot open module file ‘solver_ns_mod.mod’ for reading at (1): No such file or directory
+f951: some warnings being treated as errors
+compilation terminated.
+Failed compilation RBF_FD Optimized
+gfortran: fatal error: cannot execute ‘cc1gm2’: execvp: No such file or directory
+compilation terminated.
+NavierStokes.f90:284:132:
+
+  284 |     SUBROUTINE apply_A_fused(x_in, y_out, lap_x, dx_x, dy_x, L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y)
+      |                                                                                                                                    1
+Error: Line truncated at (1) [-Werror=line-truncation]
+NavierStokes.f90:284:132:
+
+  284 |     SUBROUTINE apply_A_fused(x_in, y_out, lap_x, dx_x, dy_x, L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y)
+      |                                                                                                                                    1
+Error: Unexpected junk in formal argument list at (1)
+NavierStokes.f90:285:50:
+
+  285 |         REAL(DP), DIMENSION(:), INTENT(IN) :: x_in
+      |                                                  1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:286:71:
+
+  286 |         REAL(DP), DIMENSION(:), INTENT(OUT) :: y_out, lap_x, dx_x, dy_x
+      |                                                                       1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:287:57:
+
+  287 |         TYPE(csr_matrix), INTENT(IN) :: L_lap, L_dx, L_dy
+      |                                                         1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:288:40:
+
+  288 |         INTEGER, INTENT(IN) :: num_nodes
+      |                                        1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:289:78:
+
+  289 |         INTEGER, DIMENSION(:), INTENT(IN) :: node_type, out_mirror, g_wall_idx
+      |                                                                              1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:290:64:
+
+  290 |         REAL(DP), DIMENSION(:), INTENT(IN) :: g_norm_x, g_norm_y
+      |                                                                1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:291:33:
+
+  291 |         INTEGER :: i, j, c, w_idx
+      |                                 1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:292:44:
+
+  292 |         REAL(DP) :: x_val, s_lap, s_dx, s_dy
+      |                                            1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:294:82:
+
+  294 |         !$OMP PARALLEL DO SCHEDULE(STATIC) PRIVATE(s_lap, s_dx, s_dy, j, c, x_val)
+      |                                                                                  1
+Error: Unexpected !$OMP PARALLEL DO statement in CONTAINS section at (1)
+NavierStokes.f90:295:27:
+
+  295 |         DO i = 1, num_nodes
+      |                           1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:296:28:
+
+  296 |             s_lap = 0.0_DP; s_dx = 0.0_DP; s_dy = 0.0_DP
+      |                            1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:296:43:
+
+  296 |             s_lap = 0.0_DP; s_dx = 0.0_DP; s_dy = 0.0_DP
+      |                                           1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:296:56:
+
+  296 |             s_lap = 0.0_DP; s_dx = 0.0_DP; s_dy = 0.0_DP
+      |                                                        1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:297:53:
+
+  297 |             !$OMP SIMD REDUCTION(+:s_lap, s_dx, s_dy)
+      |                                                     1
+Error: Unexpected !$OMP SIMD statement in CONTAINS section at (1)
+NavierStokes.f90:298:26:
+
+  298 |             DO j = L_lap%row_ptr(i), L_lap%row_ptr(i+1)-1
+      |                          1
+Error: Symbol ‘l_lap’ at (1) has no IMPLICIT type
+NavierStokes.f90:299:27:
+
+  299 |                 c = L_lap%col_ind(j); x_val = x_in(c)
+      |                           1
+Error: Symbol ‘l_lap’ at (1) has no IMPLICIT type
+NavierStokes.f90:299:53:
+
+  299 |                 c = L_lap%col_ind(j); x_val = x_in(c)
+      |                                                     1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:300:39:
+
+  300 |                 s_lap = s_lap + L_lap%val(j) * x_val
+      |                                       1
+Error: Symbol ‘l_lap’ at (1) has no IMPLICIT type
+NavierStokes.f90:301:38:
+
+  301 |                 s_dx  = s_dx  + L_dx%val(j)  * x_val
+      |                                      1
+Error: Symbol ‘l_dx’ at (1) has no IMPLICIT type
+NavierStokes.f90:302:38:
+
+  302 |                 s_dy  = s_dy  + L_dy%val(j)  * x_val
+      |                                      1
+Error: Symbol ‘l_dy’ at (1) has no IMPLICIT type
+NavierStokes.f90:303:15:
+
+  303 |             END DO
+      |               1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:304:30:
+
+  304 |             lap_x(i) = s_lap; dx_x(i) = s_dx; dy_x(i) = s_dy
+      |                              1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:304:46:
+
+  304 |             lap_x(i) = s_lap; dx_x(i) = s_dx; dy_x(i) = s_dy
+      |                                              1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:304:60:
+
+  304 |             lap_x(i) = s_lap; dx_x(i) = s_dx; dy_x(i) = s_dy
+      |                                                            1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:305:11:
+
+  305 |         END DO
+      |           1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:307:57:
+
+  307 |         !$OMP PARALLEL DO SCHEDULE(STATIC) PRIVATE(w_idx)
+      |                                                         1
+Error: Unexpected !$OMP PARALLEL DO statement in CONTAINS section at (1)
+NavierStokes.f90:308:27:
+
+  308 |         DO i = 1, num_nodes
+      |                           1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:309:40:
+
+  309 |             IF (node_type(i) == 0) THEN
+      |                                        1
+Error: Unexpected block IF statement in CONTAINS section at (1)
+NavierStokes.f90:310:35:
+
+  310 |                 y_out(i) = lap_x(i)
+      |                                   1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:311:90:
+
+  311 |             ELSE IF (node_type(i) == 1 .OR. node_type(i) == 3 .OR. node_type(i) == 5) THEN
+      |                                                                                          1
+Error: Unexpected ELSE IF statement in CONTAINS section at (1)
+NavierStokes.f90:312:34:
+
+  312 |                 y_out(i) = x_in(i)
+      |                                  1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:313:68:
+
+  313 |             ELSE IF (node_type(i) == 2 .AND. out_mirror(i) > 0) THEN
+      |                                                                    1
+Error: Unexpected ELSE IF statement in CONTAINS section at (1)
+NavierStokes.f90:314:56:
+
+  314 |                 y_out(i) = x_in(i) - x_in(out_mirror(i))
+      |                                                        1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:315:44:
+
+  315 |             ELSE IF (node_type(i) == 4) THEN
+      |                                            1
+Error: Unexpected ELSE IF statement in CONTAINS section at (1)
+NavierStokes.f90:316:37:
+
+  316 |                 w_idx = g_wall_idx(i)
+      |                                     1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:317:80:
+
+  317 |                 y_out(i) = g_norm_x(i) * dx_x(w_idx) + g_norm_y(i) * dy_x(w_idx)
+      |                                                                                1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:318:16:
+
+  318 |             ELSE
+      |                1
+Error: Unexpected ELSE statement in CONTAINS section at (1)
+NavierStokes.f90:319:34:
+
+  319 |                 y_out(i) = x_in(i)
+      |                                  1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:320:15:
+
+  320 |             END IF
+      |               1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:321:11:
+
+  321 |         END DO
+      |           1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:322:7:
+
+  322 |     END SUBROUTINE apply_A_fused
+      |       1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:324:132:
+
+  324 |     SUBROUTINE solve_poisson_bicgstab(L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, V0, Ly, coords, psi, omega, b, r, r0_hat, p, v, s, t, lap_x, dx_x, dy_x)
+      |                                                                                                                                    1
+Error: Line truncated at (1) [-Werror=line-truncation]
+NavierStokes.f90:324:132:
+
+  324 |     SUBROUTINE solve_poisson_bicgstab(L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, V0, Ly, coords, psi, omega, b, r, r0_hat, p, v, s, t, lap_x, dx_x, dy_x)
+      |                                                                                                                                    1
+Error: Unexpected junk in formal argument list at (1)
+NavierStokes.f90:325:57:
+
+  325 |         TYPE(csr_matrix), INTENT(IN) :: L_lap, L_dx, L_dy
+      |                                                         1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:326:40:
+
+  326 |         INTEGER, INTENT(IN) :: num_nodes
+      |                                        1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:327:78:
+
+  327 |         INTEGER, DIMENSION(:), INTENT(IN) :: node_type, out_mirror, g_wall_idx
+      |                                                                              1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:328:71:
+
+  328 |         REAL(DP), DIMENSION(:), INTENT(IN) :: g_norm_x, g_norm_y, omega
+      |                                                                       1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:329:38:
+
+  329 |         REAL(DP), INTENT(IN) :: V0, Ly
+      |                                      1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:330:54:
+
+  330 |         REAL(DP), DIMENSION(:,:), INTENT(IN) :: coords
+      |                                                      1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:331:97:
+
+  331 |         REAL(DP), DIMENSION(:), INTENT(INOUT) :: psi, b, r, r0_hat, p, v, s, t, lap_x, dx_x, dy_x
+      |                                                                                                 1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:332:125:
+
+  332 |         REAL(DP) :: rho, rho_prev, alpha, omega_c, beta, err, dot_r0_r, dot_r0_v, dot_s_s, dot_t_s, dot_t_t, dot_r_r, dot_b_b
+      |                                                                                                                             1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:333:26:
+
+  333 |         INTEGER :: i, iter
+      |                          1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:335:42:
+
+  335 |         !$OMP PARALLEL DO SCHEDULE(STATIC)
+      |                                          1
+Error: Unexpected !$OMP PARALLEL DO statement in CONTAINS section at (1)
+NavierStokes.f90:336:27:
+
+  336 |         DO i = 1, num_nodes
+      |                           1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:337:41:
+
+  337 |             IF (node_type(i) == 0) THEN; b(i) = -omega(i)
+      |                                         1
+Error: Unexpected block IF statement in CONTAINS section at (1)
+NavierStokes.f90:337:57:
+
+  337 |             IF (node_type(i) == 0) THEN; b(i) = -omega(i)
+      |                                                         1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:338:46:
+
+  338 |             ELSE IF (node_type(i) == 1) THEN; b(i) = V0 * coords(2,i)
+      |                                              1
+Error: Unexpected ELSE IF statement in CONTAINS section at (1)
+NavierStokes.f90:338:69:
+
+  338 |             ELSE IF (node_type(i) == 1) THEN; b(i) = V0 * coords(2,i)
+      |                                                                     1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:339:46:
+
+  339 |             ELSE IF (node_type(i) == 5) THEN; b(i) = V0 * Ly
+      |                                              1
+Error: Unexpected ELSE IF statement in CONTAINS section at (1)
+NavierStokes.f90:339:60:
+
+  339 |             ELSE IF (node_type(i) == 5) THEN; b(i) = V0 * Ly
+      |                                                            1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:340:18:
+
+  340 |             ELSE; b(i) = 0.0_DP; END IF
+      |                  1
+Error: Unexpected ELSE statement in CONTAINS section at (1)
+NavierStokes.f90:340:33:
+
+  340 |             ELSE; b(i) = 0.0_DP; END IF
+      |                                 1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:340:36:
+
+  340 |             ELSE; b(i) = 0.0_DP; END IF
+      |                                    1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:341:11:
+
+  341 |         END DO
+      |           1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:343:132:
+
+  343 |         CALL apply_A_fused(psi, v, lap_x, dx_x, dy_x, L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y)
+      |                                                                                                                                    1
+Error: Line truncated at (1) [-Werror=line-truncation]
+NavierStokes.f90:343:132:
+
+  343 |         CALL apply_A_fused(psi, v, lap_x, dx_x, dy_x, L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y)
+      |                                                                                                                                    1
+Error: Syntax error in argument list at (1)
+NavierStokes.f90:345:24:
+
+  345 |         dot_b_b = 0.0_DP
+      |                        1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:346:63:
+
+  346 |         !$OMP PARALLEL DO SCHEDULE(STATIC) REDUCTION(+:dot_b_b)
+      |                                                               1
+Error: Unexpected !$OMP PARALLEL DO statement in CONTAINS section at (1)
+NavierStokes.f90:347:27:
+
+  347 |         DO i = 1, num_nodes
+      |                           1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:348:32:
+
+  348 |             r(i) = b(i) - v(i); r0_hat(i) = r(i)
+      |                                1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:348:48:
+
+  348 |             r(i) = b(i) - v(i); r0_hat(i) = r(i)
+      |                                                1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:349:27:
+
+  349 |             v(i) = 0.0_DP; p(i) = 0.0_DP
+      |                           1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:349:40:
+
+  349 |             v(i) = 0.0_DP; p(i) = 0.0_DP
+      |                                        1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:350:41:
+
+  350 |             dot_b_b = dot_b_b + b(i)*b(i)
+      |                                         1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:351:11:
+
+  351 |         END DO
+      |           1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:352:27:
+
+  352 |         rho_prev = 1.0_DP; alpha = 1.0_DP; omega_c = 1.0_DP
+      |                           1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:352:43:
+
+  352 |         rho_prev = 1.0_DP; alpha = 1.0_DP; omega_c = 1.0_DP
+      |                                           1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:352:59:
+
+  352 |         rho_prev = 1.0_DP; alpha = 1.0_DP; omega_c = 1.0_DP
+      |                                                           1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:354:25:
+
+  354 |         DO iter = 1, 2000
+      |                         1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:355:29:
+
+  355 |             dot_r0_r = 0.0_DP
+      |                             1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:356:68:
+
+  356 |             !$OMP PARALLEL DO SCHEDULE(STATIC) REDUCTION(+:dot_r0_r)
+      |                                                                    1
+Error: Unexpected !$OMP PARALLEL DO statement in CONTAINS section at (1)
+NavierStokes.f90:357:33:
+
+  357 |             DO i = 1, num_nodes; dot_r0_r = dot_r0_r + r0_hat(i) * r(i); END DO
+      |                                 1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:357:73:
+
+  357 |             DO i = 1, num_nodes; dot_r0_r = dot_r0_r + r0_hat(i) * r(i); END DO
+      |                                                                         1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:357:76:
+
+  357 |             DO i = 1, num_nodes; dot_r0_r = dot_r0_r + r0_hat(i) * r(i); END DO
+      |                                                                            1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:358:26:
+
+  358 |             rho = dot_r0_r
+      |                          1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:359:38:
+
+  359 |             IF (ABS(rho) < 1D-14) EXIT
+      |                                      1
+Error: EXIT statement at (1) is not within a construct
+NavierStokes.f90:361:31:
+
+  361 |             IF (iter == 1) THEN
+      |                               1
+Error: Unexpected block IF statement in CONTAINS section at (1)
+NavierStokes.f90:362:50:
+
+  362 |                 !$OMP PARALLEL DO SCHEDULE(STATIC)
+      |                                                  1
+Error: Unexpected !$OMP PARALLEL DO statement in CONTAINS section at (1)
+NavierStokes.f90:363:37:
+
+  363 |                 DO i = 1, num_nodes; p(i) = r(i); END DO
+      |                                     1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:363:50:
+
+  363 |                 DO i = 1, num_nodes; p(i) = r(i); END DO
+      |                                                  1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:363:53:
+
+  363 |                 DO i = 1, num_nodes; p(i) = r(i); END DO
+      |                                                     1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:364:16:
+
+  364 |             ELSE
+      |                1
+Error: Unexpected ELSE statement in CONTAINS section at (1)
+NavierStokes.f90:365:59:
+
+  365 |                 beta = (rho / rho_prev) * (alpha / omega_c)
+      |                                                           1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:366:50:
+
+  366 |                 !$OMP PARALLEL DO SCHEDULE(STATIC)
+      |                                                  1
+Error: Unexpected !$OMP PARALLEL DO statement in CONTAINS section at (1)
+NavierStokes.f90:367:35:
+
+  367 |                 DO i = 1, num_nodes
+      |                                   1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:368:64:
+
+  368 |                     p(i) = r(i) + beta * (p(i) - omega_c * v(i))
+      |                                                                1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:369:19:
+
+  369 |                 END DO
+      |                   1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:370:15:
+
+  370 |             END IF
+      |               1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:372:132:
+
+  372 |             CALL apply_A_fused(p, v, lap_x, dx_x, dy_x, L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y)
+      |                                                                                                                                    1
+Error: Line truncated at (1) [-Werror=line-truncation]
+NavierStokes.f90:372:132:
+
+  372 |             CALL apply_A_fused(p, v, lap_x, dx_x, dy_x, L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y)
+      |                                                                                                                                    1
+Error: Syntax error in argument list at (1)
+NavierStokes.f90:374:29:
+
+  374 |             dot_r0_v = 0.0_DP
+      |                             1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:375:68:
+
+  375 |             !$OMP PARALLEL DO SCHEDULE(STATIC) REDUCTION(+:dot_r0_v)
+      |                                                                    1
+Error: Unexpected !$OMP PARALLEL DO statement in CONTAINS section at (1)
+NavierStokes.f90:376:33:
+
+  376 |             DO i = 1, num_nodes; dot_r0_v = dot_r0_v + r0_hat(i) * v(i); END DO
+      |                                 1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:376:73:
+
+  376 |             DO i = 1, num_nodes; dot_r0_v = dot_r0_v + r0_hat(i) * v(i); END DO
+      |                                                                         1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:376:76:
+
+  376 |             DO i = 1, num_nodes; dot_r0_v = dot_r0_v + r0_hat(i) * v(i); END DO
+      |                                                                            1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:377:74:
+
+  377 |             IF (ABS(dot_r0_v) < 1D-14) dot_r0_v = SIGN(1.0D-14, dot_r0_v)
+      |                                                                          1
+Error: Unexpected simple IF statement in CONTAINS section at (1)
+NavierStokes.f90:378:34:
+
+  378 |             alpha = rho / dot_r0_v
+      |                                  1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:380:28:
+
+  380 |             dot_s_s = 0.0_DP
+      |                            1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:381:67:
+
+  381 |             !$OMP PARALLEL DO SCHEDULE(STATIC) REDUCTION(+:dot_s_s)
+      |                                                                   1
+Error: Unexpected !$OMP PARALLEL DO statement in CONTAINS section at (1)
+NavierStokes.f90:382:31:
+
+  382 |             DO i = 1, num_nodes
+      |                               1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:383:42:
+
+  383 |                 s(i) = r(i) - alpha * v(i)
+      |                                          1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:384:45:
+
+  384 |                 dot_s_s = dot_s_s + s(i)*s(i)
+      |                                             1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:385:15:
+
+  385 |             END DO
+      |               1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:387:57:
+
+  387 |             err = SQRT(dot_s_s) / (SQRT(dot_b_b) + 1D-14)
+      |                                                         1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:388:32:
+
+  388 |             IF (err < 1D-6) THEN
+      |                                1
+Error: Unexpected block IF statement in CONTAINS section at (1)
+NavierStokes.f90:389:50:
+
+  389 |                 !$OMP PARALLEL DO SCHEDULE(STATIC)
+      |                                                  1
+Error: Unexpected !$OMP PARALLEL DO statement in CONTAINS section at (1)
+NavierStokes.f90:390:37:
+
+  390 |                 DO i = 1, num_nodes; psi(i) = psi(i) + alpha * p(i); END DO
+      |                                     1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:390:69:
+
+  390 |                 DO i = 1, num_nodes; psi(i) = psi(i) + alpha * p(i); END DO
+      |                                                                     1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:390:72:
+
+  390 |                 DO i = 1, num_nodes; psi(i) = psi(i) + alpha * p(i); END DO
+      |                                                                        1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:391:20:
+
+  391 |                 EXIT
+      |                    1
+Error: EXIT statement at (1) is not within a construct
+NavierStokes.f90:392:15:
+
+  392 |             END IF
+      |               1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:394:132:
+
+  394 |             CALL apply_A_fused(s, t, lap_x, dx_x, dy_x, L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y)
+      |                                                                                                                                    1
+Error: Line truncated at (1) [-Werror=line-truncation]
+NavierStokes.f90:394:132:
+
+  394 |             CALL apply_A_fused(s, t, lap_x, dx_x, dy_x, L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y)
+      |                                                                                                                                    1
+Error: Syntax error in argument list at (1)
+NavierStokes.f90:396:30:
+
+  396 |             dot_t_s = 0.0_DP; dot_t_t = 0.0_DP
+      |                              1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:396:46:
+
+  396 |             dot_t_s = 0.0_DP; dot_t_t = 0.0_DP
+      |                                              1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:397:76:
+
+  397 |             !$OMP PARALLEL DO SCHEDULE(STATIC) REDUCTION(+:dot_t_s, dot_t_t)
+      |                                                                            1
+Error: Unexpected !$OMP PARALLEL DO statement in CONTAINS section at (1)
+NavierStokes.f90:398:31:
+
+  398 |             DO i = 1, num_nodes
+      |                               1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:399:47:
+
+  399 |                 dot_t_s = dot_t_s + t(i)*s(i); dot_t_t = dot_t_t + t(i)*t(i)
+      |                                               1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:399:76:
+
+  399 |                 dot_t_s = dot_t_s + t(i)*s(i); dot_t_t = dot_t_t + t(i)*t(i)
+      |                                                                            1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:400:15:
+
+  400 |             END DO
+      |               1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:401:71:
+
+  401 |             IF (ABS(dot_t_t) < 1D-14) dot_t_t = SIGN(1.0D-14, dot_t_t)
+      |                                                                       1
+Error: Unexpected simple IF statement in CONTAINS section at (1)
+NavierStokes.f90:402:39:
+
+  402 |             omega_c = dot_t_s / dot_t_t
+      |                                       1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:404:28:
+
+  404 |             dot_r_r = 0.0_DP
+      |                            1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:405:67:
+
+  405 |             !$OMP PARALLEL DO SCHEDULE(STATIC) REDUCTION(+:dot_r_r)
+      |                                                                   1
+Error: Unexpected !$OMP PARALLEL DO statement in CONTAINS section at (1)
+NavierStokes.f90:406:31:
+
+  406 |             DO i = 1, num_nodes
+      |                               1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:407:63:
+
+  407 |                 psi(i) = psi(i) + alpha * p(i) + omega_c * s(i)
+      |                                                               1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:408:44:
+
+  408 |                 r(i) = s(i) - omega_c * t(i)
+      |                                            1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:409:45:
+
+  409 |                 dot_r_r = dot_r_r + r(i)*r(i)
+      |                                             1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:410:15:
+
+  410 |             END DO
+      |               1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:412:57:
+
+  412 |             err = SQRT(dot_r_r) / (SQRT(dot_b_b) + 1D-14)
+      |                                                         1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:413:32:
+
+  413 |             IF (err < 1D-6) EXIT
+      |                                1
+Error: EXIT statement at (1) is not within a construct
+NavierStokes.f90:414:26:
+
+  414 |             rho_prev = rho
+      |                          1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:415:11:
+
+  415 |         END DO
+      |           1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:416:7:
+
+  416 |     END SUBROUTINE solve_poisson_bicgstab
+      |       1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:474:132:
+
+  474 |     SUBROUTINE solve_ns(Re, V0, Ly, dt, num_nodes, coords, L_lap, L_dx, L_dy, L_hyp, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, psi, omega, &
+      |                                                                                                                                    1
+Error: Line truncated at (1) [-Werror=line-truncation]
+NavierStokes.f90:474:132:
+
+  474 |     SUBROUTINE solve_ns(Re, V0, Ly, dt, num_nodes, coords, L_lap, L_dx, L_dy, L_hyp, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, psi, omega, &
+      |                                                                                                                                    1
+Error: Unexpected junk in formal argument list at (1)
+NavierStokes.f90:476:46:
+
+  476 |         REAL(DP), INTENT(IN) :: Re, V0, Ly, dt
+      |                                              1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:477:40:
+
+  477 |         INTEGER, INTENT(IN) :: num_nodes
+      |                                        1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:478:54:
+
+  478 |         REAL(DP), DIMENSION(:,:), INTENT(IN) :: coords
+      |                                                      1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:479:64:
+
+  479 |         TYPE(csr_matrix), INTENT(IN) :: L_lap, L_dx, L_dy, L_hyp
+      |                                                                1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:480:78:
+
+  480 |         INTEGER, DIMENSION(:), INTENT(IN) :: node_type, out_mirror, g_wall_idx
+      |                                                                              1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:481:64:
+
+  481 |         REAL(DP), DIMENSION(:), INTENT(IN) :: g_norm_x, g_norm_y
+      |                                                                1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:482:132:
+
+  482 |         REAL(DP), DIMENSION(:), INTENT(INOUT) :: psi, omega, omg_n, k1, k2, k3, k4, omg_temp, b, r, r0_hat, p, v, s, t, lap_x, dx_x, dy_x
+      |                                                                                                                                    1
+Error: Line truncated at (1) [-Werror=line-truncation]
+NavierStokes.f90:482:132:
+
+  482 |         REAL(DP), DIMENSION(:), INTENT(INOUT) :: psi, omega, omg_n, k1, k2, k3, k4, omg_temp, b, r, r0_hat, p, v, s, t, lap_x, dx_x, dy_x
+      |                                                                                                                                    1
+Error: Invalid character in name at (1)
+NavierStokes.f90:484:36:
+
+  484 |         INTEGER :: iter, max_iter, i
+      |                                    1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:485:40:
+
+  485 |         REAL(DP) :: err_omega, gamma_hyp
+      |                                        1
+Error: Unexpected data declaration statement in CONTAINS section at (1)
+NavierStokes.f90:488:32:
+
+  488 |         IF (Re > 10.0_DP) THEN; gamma_hyp = 0.01_DP * (0.05_DP**6); ELSE; gamma_hyp = 0.0_DP; END IF
+      |                                1
+Error: Unexpected block IF statement in CONTAINS section at (1)
+NavierStokes.f90:488:68:
+
+  488 |         IF (Re > 10.0_DP) THEN; gamma_hyp = 0.01_DP * (0.05_DP**6); ELSE; gamma_hyp = 0.0_DP; END IF
+      |                                                                    1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:488:74:
+
+  488 |         IF (Re > 10.0_DP) THEN; gamma_hyp = 0.01_DP * (0.05_DP**6); ELSE; gamma_hyp = 0.0_DP; END IF
+      |                                                                          1
+Error: Unexpected ELSE statement in CONTAINS section at (1)
+NavierStokes.f90:488:94:
+
+  488 |         IF (Re > 10.0_DP) THEN; gamma_hyp = 0.01_DP * (0.05_DP**6); ELSE; gamma_hyp = 0.0_DP; END IF
+      |                                                                                              1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:488:97:
+
+  488 |         IF (Re > 10.0_DP) THEN; gamma_hyp = 0.01_DP * (0.05_DP**6); ELSE; gamma_hyp = 0.0_DP; END IF
+      |                                                                                                 1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:489:22:
+
+  489 |         max_iter = 250
+      |                      1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:491:29:
+
+  491 |         DO iter = 1, max_iter
+      |                             1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:492:46:
+
+  492 |             !$OMP PARALLEL DO SCHEDULE(STATIC)
+      |                                              1
+Error: Unexpected !$OMP PARALLEL DO statement in CONTAINS section at (1)
+NavierStokes.f90:493:33:
+
+  493 |             DO i = 1, num_nodes; omg_n(i) = omega(i); END DO
+      |                                 1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:493:54:
+
+  493 |             DO i = 1, num_nodes; omg_n(i) = omega(i); END DO
+      |                                                      1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:493:57:
+
+  493 |             DO i = 1, num_nodes; omg_n(i) = omega(i); END DO
+      |                                                         1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:496:132:
+
+  496 |             CALL solve_poisson_bicgstab(L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, V0, Ly, coords, psi, omega, b, r, r0_hat, p, v, s, t, lap_x, dx_x, dy_x)
+      |                                                                                                                                    1
+Error: Line truncated at (1) [-Werror=line-truncation]
+NavierStokes.f90:496:132:
+
+  496 |             CALL solve_poisson_bicgstab(L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, V0, Ly, coords, psi, omega, b, r, r0_hat, p, v, s, t, lap_x, dx_x, dy_x)
+      |                                                                                                                                    1
+Error: Syntax error in argument list at (1)
+NavierStokes.f90:497:95:
+
+  497 |             CALL update_boundary_vorticity(L_lap, num_nodes, node_type, g_wall_idx, psi, omega)
+      |                                                                                               1
+Error: Unexpected CALL statement in CONTAINS section at (1)
+NavierStokes.f90:498:113:
+
+  498 |             CALL compute_rhs_fused(Re, gamma_hyp, num_nodes, L_lap, L_dx, L_dy, L_hyp, node_type, psi, omega, k1)
+      |                                                                                                                 1
+Error: Unexpected CALL statement in CONTAINS section at (1)
+NavierStokes.f90:501:46:
+
+  501 |             !$OMP PARALLEL DO SCHEDULE(STATIC)
+      |                                              1
+Error: Unexpected !$OMP PARALLEL DO statement in CONTAINS section at (1)
+NavierStokes.f90:502:33:
+
+  502 |             DO i = 1, num_nodes; omg_temp(i) = omg_n(i) + 0.5_DP * dt * k1(i); END DO
+      |                                 1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:502:79:
+
+  502 |             DO i = 1, num_nodes; omg_temp(i) = omg_n(i) + 0.5_DP * dt * k1(i); END DO
+      |                                                                               1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:502:82:
+
+  502 |             DO i = 1, num_nodes; omg_temp(i) = omg_n(i) + 0.5_DP * dt * k1(i); END DO
+      |                                                                                  1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:503:132:
+
+  503 |             CALL solve_poisson_bicgstab(L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, V0, Ly, coords, psi, omg_temp, b, r, r0_hat, p, v, s, t, lap_x, dx_x, dy_x)
+      |                                                                                                                                    1
+Error: Line truncated at (1) [-Werror=line-truncation]
+NavierStokes.f90:503:132:
+
+  503 |             CALL solve_poisson_bicgstab(L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, V0, Ly, coords, psi, omg_temp, b, r, r0_hat, p, v, s, t, lap_x, dx_x, dy_x)
+      |                                                                                                                                    1
+Error: Syntax error in argument list at (1)
+NavierStokes.f90:504:98:
+
+  504 |             CALL update_boundary_vorticity(L_lap, num_nodes, node_type, g_wall_idx, psi, omg_temp)
+      |                                                                                                  1
+Error: Unexpected CALL statement in CONTAINS section at (1)
+NavierStokes.f90:505:116:
+
+  505 |             CALL compute_rhs_fused(Re, gamma_hyp, num_nodes, L_lap, L_dx, L_dy, L_hyp, node_type, psi, omg_temp, k2)
+      |                                                                                                                    1
+Error: Unexpected CALL statement in CONTAINS section at (1)
+NavierStokes.f90:508:46:
+
+  508 |             !$OMP PARALLEL DO SCHEDULE(STATIC)
+      |                                              1
+Error: Unexpected !$OMP PARALLEL DO statement in CONTAINS section at (1)
+NavierStokes.f90:509:33:
+
+  509 |             DO i = 1, num_nodes; omg_temp(i) = omg_n(i) + 0.5_DP * dt * k2(i); END DO
+      |                                 1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:509:79:
+
+  509 |             DO i = 1, num_nodes; omg_temp(i) = omg_n(i) + 0.5_DP * dt * k2(i); END DO
+      |                                                                               1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:509:82:
+
+  509 |             DO i = 1, num_nodes; omg_temp(i) = omg_n(i) + 0.5_DP * dt * k2(i); END DO
+      |                                                                                  1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:510:132:
+
+  510 |             CALL solve_poisson_bicgstab(L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, V0, Ly, coords, psi, omg_temp, b, r, r0_hat, p, v, s, t, lap_x, dx_x, dy_x)
+      |                                                                                                                                    1
+Error: Line truncated at (1) [-Werror=line-truncation]
+NavierStokes.f90:510:132:
+
+  510 |             CALL solve_poisson_bicgstab(L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, V0, Ly, coords, psi, omg_temp, b, r, r0_hat, p, v, s, t, lap_x, dx_x, dy_x)
+      |                                                                                                                                    1
+Error: Syntax error in argument list at (1)
+NavierStokes.f90:511:98:
+
+  511 |             CALL update_boundary_vorticity(L_lap, num_nodes, node_type, g_wall_idx, psi, omg_temp)
+      |                                                                                                  1
+Error: Unexpected CALL statement in CONTAINS section at (1)
+NavierStokes.f90:512:116:
+
+  512 |             CALL compute_rhs_fused(Re, gamma_hyp, num_nodes, L_lap, L_dx, L_dy, L_hyp, node_type, psi, omg_temp, k3)
+      |                                                                                                                    1
+Error: Unexpected CALL statement in CONTAINS section at (1)
+NavierStokes.f90:515:46:
+
+  515 |             !$OMP PARALLEL DO SCHEDULE(STATIC)
+      |                                              1
+Error: Unexpected !$OMP PARALLEL DO statement in CONTAINS section at (1)
+NavierStokes.f90:516:33:
+
+  516 |             DO i = 1, num_nodes; omg_temp(i) = omg_n(i) + dt * k3(i); END DO
+      |                                 1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:516:70:
+
+  516 |             DO i = 1, num_nodes; omg_temp(i) = omg_n(i) + dt * k3(i); END DO
+      |                                                                      1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:516:73:
+
+  516 |             DO i = 1, num_nodes; omg_temp(i) = omg_n(i) + dt * k3(i); END DO
+      |                                                                         1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:517:132:
+
+  517 |             CALL solve_poisson_bicgstab(L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, V0, Ly, coords, psi, omg_temp, b, r, r0_hat, p, v, s, t, lap_x, dx_x, dy_x)
+      |                                                                                                                                    1
+Error: Line truncated at (1) [-Werror=line-truncation]
+NavierStokes.f90:517:132:
+
+  517 |             CALL solve_poisson_bicgstab(L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, V0, Ly, coords, psi, omg_temp, b, r, r0_hat, p, v, s, t, lap_x, dx_x, dy_x)
+      |                                                                                                                                    1
+Error: Syntax error in argument list at (1)
+NavierStokes.f90:518:98:
+
+  518 |             CALL update_boundary_vorticity(L_lap, num_nodes, node_type, g_wall_idx, psi, omg_temp)
+      |                                                                                                  1
+Error: Unexpected CALL statement in CONTAINS section at (1)
+NavierStokes.f90:519:116:
+
+  519 |             CALL compute_rhs_fused(Re, gamma_hyp, num_nodes, L_lap, L_dx, L_dy, L_hyp, node_type, psi, omg_temp, k4)
+      |                                                                                                                    1
+Error: Unexpected CALL statement in CONTAINS section at (1)
+NavierStokes.f90:521:30:
+
+  521 |             err_omega = 0.0_DP
+      |                              1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:522:71:
+
+  522 |             !$OMP PARALLEL DO SCHEDULE(STATIC) REDUCTION(MAX:err_omega)
+      |                                                                       1
+Error: Unexpected !$OMP PARALLEL DO statement in CONTAINS section at (1)
+NavierStokes.f90:523:31:
+
+  523 |             DO i = 1, num_nodes
+      |                               1
+Error: Unexpected DO statement in CONTAINS section at (1)
+NavierStokes.f90:524:43:
+
+  524 |                 IF (node_type(i) == 0) THEN
+      |                                           1
+Error: Unexpected block IF statement in CONTAINS section at (1)
+NavierStokes.f90:525:103:
+
+  525 |                     omega(i) = omg_n(i) + (dt / 6.0_DP) * (k1(i) + 2.0_DP*k2(i) + 2.0_DP*k3(i) + k4(i))
+      |                                                                                                       1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:526:72:
+
+  526 |                 ELSE IF (node_type(i) == 2 .AND. out_mirror(i) > 0) THEN
+      |                                                                        1
+Error: Unexpected ELSE IF statement in CONTAINS section at (1)
+NavierStokes.f90:527:51:
+
+  527 |                     omega(i) = omega(out_mirror(i))
+      |                                                   1
+Error: Unexpected assignment statement in CONTAINS section at (1)
+NavierStokes.f90:528:19:
+
+  528 |                 END IF
+      |                   1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:529:94:
+
+  529 |                 IF (ABS(omega(i) - omg_n(i)) > err_omega) err_omega = ABS(omega(i) - omg_n(i))
+      |                                                                                              1
+Error: Unexpected simple IF statement in CONTAINS section at (1)
+NavierStokes.f90:530:15:
+
+  530 |             END DO
+      |               1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:532:40:
+
+  532 |             IF (MOD(iter, 50) == 0) THEN
+      |                                        1
+Error: Unexpected block IF statement in CONTAINS section at (1)
+NavierStokes.f90:533:84:
+
+  533 |                 PRINT '(A,I6, A,ES10.3)', 'RK4 Step: ', iter, ' Err_Om: ', err_omega
+      |                                                                                    1
+Error: Unexpected WRITE statement in CONTAINS section at (1)
+NavierStokes.f90:534:105:
+
+  534 |                 IF (err_omega > 1.0D5 .OR. err_omega /= err_omega) STOP 'DIVERGENCIA ESPECTRAL DETECTADA'
+      |                                                                                                         1
+Error: Unexpected simple IF statement in CONTAINS section at (1)
+NavierStokes.f90:535:15:
+
+  535 |             END IF
+      |               1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:536:38:
+
+  536 |             IF (err_omega < 1D-7) EXIT
+      |                                      1
+Error: EXIT statement at (1) is not within a construct
+NavierStokes.f90:537:11:
+
+  537 |         END DO
+      |           1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:538:7:
+
+  538 |     END SUBROUTINE solve_ns
+      |       1
+Error: Expecting END MODULE statement at (1)
+NavierStokes.f90:549:9:
+
+  549 |     USE solver_ns_mod
+      |         1
+Fatal Error: Cannot open module file ‘solver_ns_mod.mod’ for reading at (1): No such file or directory
+f951: some warnings being treated as errors
+compilation terminated.
+Failed compilation RBF_FD Parallel
+Original: 0, Optimized: 0, Parallel(20): 0
+All benchmarks completed.

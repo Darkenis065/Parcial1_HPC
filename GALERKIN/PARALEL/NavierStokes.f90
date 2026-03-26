@@ -12,9 +12,9 @@ module GlobalData
     real(dp) :: V0 = 1.0_dp
     real(dp) :: nu = 0.25_dp
     real(dp) :: omega_thom = 0.002_dp 
-    real(dp) :: tol = 1.0d-6
-    integer  :: max_picard = 25000
-    integer  :: max_gs     = 15000
+    real(dp) :: tol = 1.0d-4
+    integer  :: max_picard = 1000
+    integer  :: max_gs     = 1500
 
     ! --- ESTRUCTURAS DE DATOS TOPOLÓGICAS ---
     integer :: n_nodes, n_elements

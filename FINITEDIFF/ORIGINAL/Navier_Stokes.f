@@ -19,8 +19,7 @@ C=======================================================================
       PARAMETER (NX=140, NY=140)
       DIMENSION P(NX,NY), XSI(NX,NY)
 
-      WRITE (6,*) 'NUMERO DE ITERACIONES'
-      READ (5,*) JJJ
+      JJJ = 10000
 
 C     POSICION DEL OBSTACULO
       LENGTH = NY/4  ! ANCHO
