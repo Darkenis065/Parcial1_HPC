@@ -1,6 +1,4 @@
 --- Benchmarking RBF-FD ---
-gfortran: fatal error: cannot execute ‘cc1gm2’: execvp: No such file or directory
-compilation terminated.
 NavierStokes.f90:259:132:
 
   259 |     SUBROUTINE solve_poisson_bicgstab(L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y, V0, Ly, coords, psi, omega)
@@ -539,8 +537,6 @@ Fatal Error: Cannot open module file ‘solver_ns_mod.mod’ for reading at (1):
 f951: some warnings being treated as errors
 compilation terminated.
 Failed compilation RBF_FD Original
-gfortran: fatal error: cannot execute ‘cc1gm2’: execvp: No such file or directory
-compilation terminated.
 NavierStokes.f90:268:132:
 
   268 |     SUBROUTINE apply_A_fused(x_in, y_out, lap_x, dx_x, dy_x, L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y)
@@ -1509,8 +1505,6 @@ Fatal Error: Cannot open module file ‘solver_ns_mod.mod’ for reading at (1):
 f951: some warnings being treated as errors
 compilation terminated.
 Failed compilation RBF_FD Optimized
-gfortran: fatal error: cannot execute ‘cc1gm2’: execvp: No such file or directory
-compilation terminated.
 NavierStokes.f90:284:132:
 
   284 |     SUBROUTINE apply_A_fused(x_in, y_out, lap_x, dx_x, dy_x, L_lap, L_dx, L_dy, num_nodes, node_type, out_mirror, g_wall_idx, g_norm_x, g_norm_y)
